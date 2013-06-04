@@ -1,0 +1,35 @@
+.animate {
+    @include transition(transform .5s, opacity .5s, left .5s);
+    @include translate3d(0,0,0);
+    -webkit-font-smoothing: antialiased;
+
+    &.slide-left.hide { @include translate3d(-100%,0,0); }
+    &.slide-right.hide { @include translate3d(100%,0,0); }
+    &.slide-up.hide { @include translate3d(0,-100%,0); }
+    &.slide-down.hide { @include translate3d(0,100%,0); }
+    &.fade.hide { @include opacity(0); }
+
+    &.static { -webkit-transition: none !important; }
+    &.static-smooth { -webkit-transition-duration: 0s !important; }
+
+    &.slow { -webkit-transition-duration: .75s; }
+    &.fast { -webkit-transition-duration: .25s; }
+}
+
+
+.ui-carousel,
+.ui-carousel-pane {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    bottom: 0;
+}
+
+.ui-carousel-pane {
+    height: 100%;
+}
+
+.ui-carousel {
+    overflow: hidden;
+}
