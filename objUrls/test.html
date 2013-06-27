@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="ngView">
+  <head>
+    <script src="http://code.angularjs.org/1.0.6/angular.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div ng-controller="MainCntl">
+      Boeken: {{books}} <button ng-click="saveBooks()">Save</button>
+
+        <hr>
+
+      <div ng-view></div>
+      <hr />
+    
+      <pre>$location.path() = {{$location.path()}}</pre>
+      <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
+      <pre>$route.current.params = {{$route.current.params}}</pre>
+      <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
+      <pre>$routeParams = {{$routeParams}}</pre>
+    </div>
+  </body>
+</html>
